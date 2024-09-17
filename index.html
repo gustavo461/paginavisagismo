@@ -1,35 +1,188 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transforme sua Vida</title>
-  
-  <!-- Meta tags para exibição de miniatura ao compartilhar o link -->
-  <meta property="og:title" content="Aprenda Visagismo HOJE!" />
-  <meta property="og:description" content="Descubra como harmonizar o visual de seus clientes com técnicas simples e sem intervenções." />
-  <meta property="og:image" content="https://i.imgur.com/zEKyff3.png" />
-  <meta property="og:url" content="https://pensezen.my.canva.site/aprendavisagismo" />
-  <meta name="twitter:card" content="summary_large_image">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site com Seções</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap');
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JY9655G7Y3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Josefin Sans', sans-serif;
+            overflow-x: hidden;
+        }
 
-    gtag('config', 'G-JY9655G7Y3');
-  </script>
+        .section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-  <script>
-    window.onload = function() {
-      setTimeout(function() {
-        window.location.href = 'https://pensezen.my.canva.site/aprendavisagismo';
-      }, 100); // Atraso mínimo para garantir que o script seja carregado
-    };
-  </script>
+        .section img, .section video {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                height: auto;
+            }
+
+            .section img, .section video {
+                width: 100vw;
+                height: auto;
+            }
+
+            .button {
+                padding: 15px 70px;
+                font-size: 18px;
+            }
+
+            footer {
+                padding: 20px 10px;
+                font-size: 14px;
+            }
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #B41B13;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            padding: 15px 50px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: pulse 1.5s infinite;
+            font-family: 'Josefin Sans', sans-serif;
+            white-space: nowrap;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.1);
+            }
+            100% {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            border-top: 2px solid #B41B13;
+        }
+
+        .video-container {
+            position: absolute;
+            bottom: 15%; /* Ajustado para mover o vídeo um pouco mais para cima */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+        }
+
+        @media (min-width: 769px) {
+            .video-container {
+                bottom: 20%;
+            }
+        }
+
+        .footer-link {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 50px; /* Ajuste a altura conforme necessário */
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0); /* Invisível, mas clicável */
+        }
+    </style>
 </head>
 <body>
+    <div class="section section1">
+        <img src="https://i.imgur.com/0TbYyyK.png" alt="Seção 1">
+        <div class="video-container">
+            <video src="https://i.imgur.com/ZnqbLs1.mp4" autoplay muted loop onclick="toggleAudio()"></video>
+        </div>
+        <div class="footer-link" onclick="window.location.href='https://pay.kiwify.com.br/0ML4lFh';"></div>
+    </div>
+    <div class="section section2">
+        <img src="https://i.imgur.com/9XKW9Qr.png" alt="Seção 2">
+    </div>
+    <div class="section section3">
+        <img src="https://i.imgur.com/LaZckJU.png" alt="Seção 3">
+        <a href="https://pay.kiwify.com.br/0ML4lFh" class="button">SEJA UM VISAGISTA</a>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Visagismo Capilar. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAudio() {
+            var video = document.querySelector('.video-container video');
+            video.muted = !video.muted;
+        }
+
+        // Redireciona para o link especificado ao acessar a versão desktop
+        if (window.innerWidth >= 769) {
+            window.location.href = 'https://pensezen.my.canva.site/aprendavisagismo';
+        }
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s) {
+            if(f.fbq) return;
+            n=f.fbq=function() {
+                n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+            };
+            if(!f._fbq) f._fbq=n;
+            n.push=n; n.loaded=!0; n.version='2.0';
+            n.queue=[];
+            t=b.createElement(e); t.async=!0;
+            t.src=v; s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)
+        }(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '809844031351935'); 
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=809844031351935&ev=PageView&noscript=1"/></noscript>
 </body>
 </html>
